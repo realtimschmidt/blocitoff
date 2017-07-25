@@ -1,8 +1,9 @@
 (function() {
-  function HomeCtrl() {
-  }
+  function HomeCtrl(Task) {
+    this.tasks = Task.all;
+  };
 
   angular
     .module('blocitoff')
-    .controller('HomeCtrl', [HomeCtrl]);
+    .controller('HomeCtrl', ['Task', HomeCtrl]);
 })();
