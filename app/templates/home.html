@@ -1,15 +1,27 @@
+<nav class="nav-bar">
+  <h5> Active Tasks | Task History </h5>
+</nav>
+
 <section class="hero-content">
-  <h1 class="hero-title">Current Tasks</h1>
-  <button class="new-task">
-      <h5 class="task-btn">New Task</h5>
-  </button>
+  <h1 class="hero-title">Active Tasks</h1>
+</section>
+
+<section class="new-task">
+  <div class="new-task-header">
+    Task Name | Description | Priority
+  </div>
+  <div class="new-task-field">
+    <input type="text" name="task-name" value="I'm a new Task Name!">
+    <input type="text" name="task-description" value="I'm a new Task Description!">
+  </div>
 </section>
 
 <section class="task-content">
-  <ul class="task-list" ng-repeat="task in home.tasks">
+  <div class="task-list" ng-repeat="task in home.tasks">
     <h3>{{ task.title }}</h3>
     <p>Created: {{ task.createdAt }}
     <p class="task-description">Description: {{ task.description }}</p>
-  </ul>
+    <hr class="task-rule">
+  </div>
 
 </section>
