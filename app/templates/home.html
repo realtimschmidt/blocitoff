@@ -10,14 +10,15 @@
   <div class="new-task-header">
     Task Name | Description | Priority
   </div>
-  <div class="new-task-field">
-    <input type="text" name="task-name" value="I'm a new Task Name!">
-    <input type="text" name="task-description" value="I'm a new Task Description!">
+  <div class="new-task-field" ng-submit="home.addTask()">
+    <input type="text" class="task-field" ng-model="task.title" name="title" value="I'm a new Task Name!">
+    <input type="text" class="task-field" ng-model="task.description" value="I'm a new Task Description!">
+    <input type="submit" class="submit" value="Add Task">
   </div>
 </section>
 
 <section class="task-content">
-  <div class="task-list" ng-repeat="task in home.tasks">
+  <div class="task-list" ng-repeat="task in home.tasks" ng-hide="task.expiredTask(task.createdAt)">
     <h3>{{ task.title }}</h3>
     <p>Created: {{ task.createdAt }}
     <p class="task-description">Description: {{ task.description }}</p>

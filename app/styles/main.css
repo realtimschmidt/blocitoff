@@ -47,7 +47,7 @@ body {
   padding: 0 0 1rem 2.5rem;
 }
 
-.new-task-field input {
+.task-field {
   margin: 0 2rem 0 0;
   width: 30%
 }
