@@ -2,7 +2,6 @@
   function HomeCtrl(Task) {
     this.tasks = Task.all;
 
-
     this.hide = function(task) {
      return task.created < (moment().dayOfYear() - 7) || task.completed == true
     };
@@ -13,17 +12,12 @@
           title: this.title,
           description: this.description,
           created: moment().dayOfYear(),
-          completed: this.completed
+          completed: false
         });
         this.title = '';
       }
     };
 
-    this.expiredTask = function (created) {
-      if (created < Date.now() - 604800000) {
-        return true;
-      }
-    }
   }
 
   angular
