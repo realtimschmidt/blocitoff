@@ -6,13 +6,14 @@
      return task.created < (moment().dayOfYear() - 7) || task.completed == true
     };
 
-    this.addTask = function () {
+    this.addTask = function (priority) {
       if (this.title) {
         this.task.$add({
           title: this.title,
           description: this.description,
           created: moment().dayOfYear(),
-          completed: false
+          completed: false,
+          $priority: priority
         });
         this.title = '';
       }
