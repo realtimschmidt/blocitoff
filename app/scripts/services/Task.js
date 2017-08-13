@@ -5,6 +5,9 @@
 
     return {
       all: tasks,
+      addTask: function(newTask) {
+        tasks.$add(newTask);
+      }
     }
   };
 

@@ -3,10 +3,15 @@
 </section>
 
 <section class="new-task">
-  <div class="new-task-field" ng-submit="home.addTask()">
-    <input type="text" class="task-field" ng-model="home.title" placeholder="Name your new task">
-    <input type="text" class="task-field" ng-model="home.description" placeholder="Describe your new task">
-    <input type="submit" class="submit" value="Add Task">
+  <div class="new-task-field">
+    <input type="text" class="task-field" ng-model="messageTitle" placeholder="Name your new task">
+    <input type="text" class="task-field" ng-model="messageDescription" placeholder="Describe your new task">
+    <select class="priority" ng-model="taskPriority">
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low" >Low</option>
+    </select>
+    <button class="submit" ng-click="home.addTask(messageTitle, messageDescription, taskPriority); clearfunction(this)">Add Task</button>
   </div>
 </section>
 
@@ -17,7 +22,7 @@
         <input class="task-checkbox" type="checkbox">
         <h3 class="archive-title">{{ task.title }}</h3>
       </div>
-      <p>Created: {{ task.created }}
+      <p class="task-priority">Priority: {{ task.priority }} | Created: {{ task.created }}</p>
       <p class="task-description">Description: {{ task.description }}</p>
       <hr class="task-rule">
     </div>
