@@ -13,6 +13,12 @@
       tasks.$save(task)
     }
 
+    var dayOfYearToDate = function dateFromDay(day){
+      var year = moment().year()
+      var date = new Date(year, 0); // initialize a date in `year-01-01`
+      return new Date(date.setDate(day)); // add the number of days
+    }
+    
     return {
       all: tasks,
       addTask: function(newTask) {

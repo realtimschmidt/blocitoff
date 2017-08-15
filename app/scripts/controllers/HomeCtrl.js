@@ -9,6 +9,11 @@
      return task.created < (moment().dayOfYear() - 7) || task.completed == true
     };
 
+  /*  this.dayOfYearToDate = function(task){
+      console.log(task)
+      return Task.dayOfYearToDate(task.created)
+    }*/
+
     this.addTask = function(messageTitle, messageDescription, taskPriority) {
       if (messageTitle) {
         var newTask = {
@@ -23,7 +28,7 @@
       $scope.clearfunction = function(event){
         event.messageTitle = null;
         event.messageDescription = null;
-        event.taskPriority = "Low";
+        event.taskPriority = "3";
       }
     }
 
